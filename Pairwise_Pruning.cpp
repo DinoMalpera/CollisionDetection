@@ -4,7 +4,10 @@
 
 using namespace CoDet;
 
-static
+namespace {
+
+/*  Check whether two bounding boxes intersect
+*/
 bool
 do_bbox_intersect(
         const BBox bbox1,
@@ -33,9 +36,8 @@ do_bbox_intersect(
 }
 
 /*    If interior node, return its children.
- *     If leaf, return vector comprised only of that leaf node.
+ *    If leaf, return vector comprised only of that leaf node.
  * */
-static
 auto
 get_vector_of_candidates(
         const BVH_Node*const node )
@@ -54,7 +56,6 @@ get_vector_of_candidates(
     return std::vector<const BVH_Node*>{node};
 }
 
-static
 bool
 both_candidates_are_leaf_nodes(
         const BVH_Node& node1_child,
@@ -63,6 +64,8 @@ both_candidates_are_leaf_nodes(
     return
           (node1_child.get_child_volumes().empty())
         & (node2_child.get_child_volumes().empty());    // bitwise operator to remove dependency
+}
+
 }
 
 pairwise_pruning_return_t

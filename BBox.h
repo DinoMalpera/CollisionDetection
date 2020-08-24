@@ -4,6 +4,7 @@
 
 namespace CoDet {
 
+/*  Bounding box aggregate. */
 struct
 BBox
 {

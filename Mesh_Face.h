@@ -5,6 +5,7 @@
 
 namespace CoDet {
 
+/*  Holds mesh face data. */
 struct Mesh_Face
 {
 public:

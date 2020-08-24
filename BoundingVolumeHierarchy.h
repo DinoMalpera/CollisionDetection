@@ -6,6 +6,11 @@ namespace CoDet {
 
 struct Mesh_Face;
 
+/*  BVH class
+*
+*   Entry point to the bounding volume
+*   hierarchy.
+*/
 class BoundingVolumeHierarchy final
 {
 private:

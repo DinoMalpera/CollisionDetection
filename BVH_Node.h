@@ -9,6 +9,11 @@ namespace CoDet {
 struct Mesh_Face;
 using Mesh_face_iterator = decltype( std::vector<const Mesh_Face*>().begin() );
 
+/*  Node of the BVH.
+*
+*   Holds bounding box of elements contained.
+*   It also holds either child nodes or mesh faces (if leaf).
+*/
 class BVH_Node final
 {
 private:
@@ -22,8 +27,8 @@ private:
             const Mesh_face_iterator    mesh_face_data,
             const BBox                  bbox
     )
-        :    bbox    (bbox)
-        ,    face    (const_cast<Mesh_Face*>(*mesh_face_data))
+        :   bbox    (bbox)
+        ,   face    (const_cast<Mesh_Face*>(*mesh_face_data))
     {
     }
 private:
@@ -32,9 +37,9 @@ private:
             std::vector<BVH_Node>&&      nodes,
             const BBox                   bbox
     )
-        :    bbox            (bbox)
-        ,    child_volumes   (nodes)
-        ,    face            (nullptr)
+        :   bbox            (bbox)
+        ,   child_volumes   (nodes)
+        ,   face            (nullptr)
     {
         assert( !child_volumes.empty() );
     }

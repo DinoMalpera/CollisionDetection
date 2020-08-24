@@ -8,8 +8,10 @@
 
 using namespace CoDet;
 
-// compute bbox
-static
+namespace {
+
+/*  Compute Bounding Box
+*/
 BBox
 find_bounds(
         const Mesh_face_iterator    mesh_face_data_begin,
@@ -41,8 +43,10 @@ find_bounds(
     return bbox;
 }
 
+/*  Build BVH using top down approach.
+    Partitioning method is provided as a policy.
+*/
 template <typename Partitioning_policy>
-static
 auto
 _build_BVH_topDown(
         const Mesh_face_iterator    mesh_face_data_begin,
@@ -88,6 +92,8 @@ _build_BVH_topDown(
         BVH_Node::make_BVH_Node(
             std::move( ret ),
             bbox );
+}
+
 }
 
 template <typename Partitioning_policy>

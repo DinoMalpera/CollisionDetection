@@ -20,9 +20,9 @@ public:
             const mesh_t&                       mesh1,
             const mesh_t&                       mesh2
     )
-        :    collision_candidate_faces    (collision_candidate_faces)
-        ,    mesh1                        (mesh1)
-        ,    mesh2                        (mesh2)
+        :   collision_candidate_faces    (collision_candidate_faces)
+        ,   mesh1                        (mesh1)
+        ,   mesh2                        (mesh2)
     {}
 public:
     void
