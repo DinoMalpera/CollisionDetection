@@ -1,6 +1,6 @@
 # CollisionDetection
 
-Simple implementation of a mesh collision detection algorithm uaing pairwise pruning. Outputs candidate faces pairs from both meshes.
+Simple implementation of a mesh collision detection algorithm uaing pairwise pruning. Outputs candidate face pairs from both meshes.
 
 ### Dependencies
 
